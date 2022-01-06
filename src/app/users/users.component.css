@@ -1,0 +1,13 @@
+.section__users {
+  font-size: 1.4rem;
+  width: 50rem;
+  padding: 2rem;
+  margin: auto;
+  border-radius: 3px;
+}
+
+.users__card {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}

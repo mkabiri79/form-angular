@@ -1,0 +1,134 @@
+<section class="section__form">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form__container">
+    <div id="el-1" class="form__group">
+      <label class="form__label" for=""
+        >First name
+
+        <span *ngIf="isRequired('firstName')" class="form__massage">
+          *Required</span
+        >
+        <span *ngIf="isValid('firstName', 'minlength')" class="form__massage">
+          *At least 3 charactor</span
+        >
+      </label>
+      <input
+        formControlName="firstName"
+        class="form__input Input__small"
+        placeholder="Ali"
+        type="text"
+        id="firstName"
+        name="firstName"
+      />
+    </div>
+    <div id="el-2" class="form__group">
+      <label class="form__label" for=""
+        >Last name
+        <span *ngIf="isRequired('lastName')" class="form__massage">
+          *Required</span
+        >
+        <span *ngIf="isValid('lastName', 'minlength')" class="form__massage">
+          *At least 3 charactor</span
+        ></label
+      >
+      <input
+        formControlName="lastName"
+        class="form__input Input__small"
+        placeholder="Mohammadi"
+        type="text"
+        id="lastName"
+        name="lastName"
+      />
+    </div>
+    <div id="el-3" class="form__group">
+      <label class="form__label" for=""
+        >Passport number
+        <span *ngIf="isRequired('passportNumber')" class="form__massage"
+          >*Required</span
+        ><span
+          *ngIf="isValid('passportNumber', 'isInvalid')"
+          class="form__massage"
+          >*Invalid Passport Number</span
+        ><span
+          *ngIf="isValid('passportNumber', 'isBanned')"
+          class="form__massage"
+          >*Already token</span
+        >
+      </label>
+
+      <input
+        formControlName="passportNumber"
+        class="form__input"
+        placeholder="1234567890"
+        type="number"
+        id="passportNumber"
+        name="passportNumber"
+      />
+    </div>
+    <div id="el-4" class="form__group">
+      <label class="form__label" for=""
+        >Birthday
+        <span *ngIf="valid('birthday')" class="form__massage">*Required</span>
+      </label>
+
+      <input
+        formControlName="birthday"
+        class="form__input date__input"
+        type="date"
+        max="{{ today | yyyyMmDd }}"
+        min="1900-01-01"
+        #birthday
+      />
+    </div>
+    <div id="el-5" class="form__group">
+      <label class="form__label" for=""
+        >Job position
+        <span *ngIf="valid('jobPosition')" class="form__massage"
+          >*Required</span
+        >
+      </label>
+      <span class="form__massage"></span>
+      <select id="jobPosition" formControlName="jobPosition" name="jobPosition">
+        <option value="" selected disabled hidden>Choose here</option>
+        <option value="Administrative Assistant">
+          Administrative Assistant
+        </option>
+        <option value="Executive Assistant">Executive Assistant</option>
+        <option value="Marketing Manager">Marketing Manager</option>
+
+        <option value="Customer Service Representative">
+          Customer Service Representative
+        </option>
+        <option value="Nurse Practitioner">Nurse Practitioner</option>
+        <option value="Software Engineer">Software Engineer</option>
+        <option value="Sales Manager">Sales Manager</option>
+        <option value="Data Entry Clerk">Data Entry Clerk</option>
+      </select>
+    </div>
+    <div id="el-6" class="form__group">
+      <label class="form__label" for=""
+        >Date of hire
+        <span *ngIf="isRequired('hireDate')" class="form__massage"
+          >*Required</span
+        ><span *ngIf="isValid('hireDate', 'isInvalid')" class="form__massage"
+          >*Invalid date</span
+        >
+      </label>
+
+      <input
+        formControlName="hireDate"
+        class="form__input"
+        type="date"
+        max="{{ today | yyyyMmDd }}"
+        min="1900-01-01"
+      />
+    </div>
+    <button
+      id="el-7"
+      [class]="{ disabled: !userForm.valid }"
+      [disabled]="!userForm.valid"
+      type="submit"
+    >
+      Add User
+    </button>
+  </form>
+</section>

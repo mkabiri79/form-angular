@@ -1,0 +1,20 @@
+.heading__title {
+  margin-top: 3rem;
+
+  text-align: center;
+  color: #15232b;
+}
+.heading__title h1 {
+  margin-bottom: 5rem;
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+a:link,
+a:visited {
+  color: #0197ec;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 1rem;
+}

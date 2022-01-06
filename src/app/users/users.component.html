@@ -1,0 +1,11 @@
+<section class="section__users">
+  <div class="users__container">
+    <div *ngFor="let user of users" class="users__card">
+      <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+      <p>Birthday: {{ user.birthday | date: "mediumDate" }}</p>
+      <p>Passport number: {{ user.passportNumber }}</p>
+      <p>Job: {{ user.jobPosition }}</p>
+      <p>Date of hire: {{ user.hireDate | date: "mediumDate" }}</p>
+    </div>
+  </div>
+</section>
